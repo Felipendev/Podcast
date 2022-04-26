@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from './erros/not-found/not-found.component';
+import { NotFoundComponent } from './erros/erros/not-found/not-found.component';
 import { EnvioDeMensagemComponent } from './views/envio-de-mensagem/envio-de-mensagem.component';
 
 
