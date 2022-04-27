@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://github.com/Felipendev/podcast-fe.git'
+  apiUrl: 'https://podcast-podequestionar-be.herokuapp.com/'
 };
