@@ -18,7 +18,7 @@ body {
 }
 
 img {
-    margin-top: -30px;
+    margin-top: -80px;
     width: 30rem;
     height: 30rem;
     width: 100%;
@@ -58,7 +58,6 @@ h2 span {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 150px;
     height: 40px;
     text-decoration: none;
@@ -95,6 +94,42 @@ h2 span {
 #btn:hover a::before {
     transform: skewX(45deg) translateX(120%);
 }
+
+input:focus, button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.containerSpinner {
+
+}
+
+.spinner {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.32);
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 55%;
+    left: 25%;
+    z-index: 2000;
+}
+
 label {
     margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .spinner{
+        left: 2%;
+        top: 70%;
+        width: 390px;
+        height: 190px;
+    }
+    .h2 span, #my-name {
+        justify-content: center;
+        font-size: 2rem;
+    }
 }

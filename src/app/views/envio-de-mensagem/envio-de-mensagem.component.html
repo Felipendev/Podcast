@@ -2,15 +2,20 @@
     <form class="p-2" [formGroup]="form" (ngSubmit)="enviaEmail()">
         <img class="img-fluid" src="https://lh3.googleusercontent.com/pw/AM-JKLXmRLmd9eoTM4YPuS8diuCJj7lmGrPI9rxXfCfvtTN2PTiKqYnAF6eJk4N2pnSDMpZhu1rKIHZU0M1YoRDUFOAz6pbgsvf4ncfI2Ivf5N1JyAZiej3YQLWimzSo5HpSI1U_Ozw9EGq4xGme2gYf3TX-=s625-no?authuser=0"
             alt="Logo do PODCAST">
-            <h2><span id="my-name" class="clipped">Qual é sua dúvida?</span></h2>
+            <h2><span id="my-name" class="clipped d-flex justify-content-center">Qual é sua dúvida?</span></h2>
         <div class="form-group">
             <label for="exampleFormControlTextarea1" class="pb-2">Pergunta:</label>
-            <textarea class="form-control p-1" formControlName="text" name="text" id="exampleFormControlTextarea1"
-                rows="4" placeholder="Digite aqui sua pergunta"></textarea>
+            <input class="form-control p-1" formControlName="text" name="text" id="exampleFormControlTextarea1"
+                rows="4" placeholder="Digite aqui sua pergunta">
+                
         </div>
-        <button type="submit" id="btn" class="btn pt-3"><a>Enviar</a></button>
+        <div class="containerSpinner">
+            <img *ngIf="isLoading" class="spinner"src="assets/spinner.gif"/>
+        </div>
+        
+        <button type="submit" id="btn" (click)="toggleLoading()" [disabled]="form.invalid" class="btn pt-3"><a>Enviar</a></button>
     </form>
+    <p-toast></p-toast>
 </body>
-<p-toast></p-toast>
 <p-confirmDialog [style]="{width: '50vw'}" [position]="position" [baseZIndex]="10000" header="Confirmation"
     icon="pi pi-exclamation-triangle"></p-confirmDialog>

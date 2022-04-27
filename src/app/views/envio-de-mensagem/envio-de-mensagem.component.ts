@@ -7,6 +7,7 @@ import { Email } from 'src/app/shared/envia-mensagem/envia-mensagem.model';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { EmailService } from 'src/app/shared/email.service';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-envio-de-mensagem',
   templateUrl: './envio-de-mensagem.component.html',
@@ -16,8 +17,11 @@ import { EmailService } from 'src/app/shared/email.service';
 export class EnvioDeMensagemComponent implements OnInit {
 
   form!: FormGroup;
+  email!: Email; 
   emails!: Observable<Email[]>;
   position!: string;
+  progres = 0;
+  isLoading = false;
 
   constructor(
     private router: Router,
@@ -26,7 +30,7 @@ export class EnvioDeMensagemComponent implements OnInit {
     public dialogService: DialogService,
     private confirmationService: ConfirmationService,
     private service: EmailService,
-    private messageService: MessageService) { }
+    private messageService: MessageService,) { }
 
   ngOnInit(): void {
 
@@ -45,7 +49,7 @@ export class EnvioDeMensagemComponent implements OnInit {
       this.messageService.add({ severity: 'success', summary: 'Tudo certo!', detail: 'Pergunta enviada com sucesso!' });
       setTimeout(function () {
         window.location.reload();
-      }, 1000);
+      }, 100);
     },
       error => {
         console.log("Falha ao enviar pergunta!")
@@ -56,6 +60,10 @@ export class EnvioDeMensagemComponent implements OnInit {
 
   validarObrigatoriedade(input: FormControl) {
     return (input.value ? null : { obrigatoriedade: true });
+  }
+
+  toggleLoading = () => {
+    this.isLoading = true;
   }
 
 }

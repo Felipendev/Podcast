@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { EnvioDeMensagemComponent } from './views/envio-de-mensagem/envio-de-mensagem.component';
-import { NotFoundComponent } from './erros/erros/not-found/not-found.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,13 +12,13 @@ import {AccordionModule} from 'primeng/accordion';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EnvioDeMensagemComponent,
-    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ConfirmDialogModule,
     AccordionModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ProgressSpinnerModule
 
     
     
