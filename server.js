@@ -6,7 +6,7 @@ const app = express();
 
 // nome da porta que o heroku ira rodar a aplicação. Se não houver, será usado a 8080
 const PORT = process.env.PORT || 8080;
-const appName = 'ms-email-fe';
+const appName = 'podcast';
 
 // local onde build ira gerar os arquivos
 const outputPath = `${__dirname}/dist/${appName}`;
